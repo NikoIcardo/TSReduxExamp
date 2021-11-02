@@ -2,7 +2,7 @@ import { createStore, combineReducers } from 'redux';
 import { counterReducer }from './counter/CounterReducer'; 
 
 export const rootReducer = combineReducers({
-  counterReducer
+  counter: counterReducer
 }); 
 
 // Need a type to describe our application state

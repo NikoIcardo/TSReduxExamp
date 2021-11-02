@@ -1,12 +1,13 @@
 import React, {Component, PropsWithChildren} from 'react'; 
 
 interface ButtonProps {
-  color: string
+  color: string, 
+  handleClick: () => void,
 }
 
 class Button extends Component<PropsWithChildren<ButtonProps>> {
   render = () => (
-    <span style={{cursor: 'pointer', backgroundColor: this.props.color, margin: '20px', padding: '10px'}}>
+    <span onClick={this.props.handleClick} style={{cursor: 'pointer', backgroundColor: this.props.color, margin: '20px', padding: '10px'}}>
       {this.props.children}
     </span>
   )

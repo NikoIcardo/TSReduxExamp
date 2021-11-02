@@ -12,7 +12,6 @@ export const counterReducer: Reducer<Counter, Action> = (state = defaultState, a
     count: state.count
   }
 
-
   switch (action.type) {
     case INCREMENT_COUNTER: 
       nextState.count = state.count + 1

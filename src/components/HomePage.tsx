@@ -1,15 +1,22 @@
 import React, {Component} from 'react'; 
 import Button from './CounterButton';
 
-
-class HomePage extends Component {
-  render = () => (
-    <div style={{textAlign: 'center', marginTop: '40px', fontSize: '2rem'}}>
-      <span>0</span>
-      <Button color={'lightgreen'}>Increment</Button>
-      <Button color={'orange'}>Decrement</Button>
-    </div>
-  )
+interface Props {
+  increment: () => void, 
+  decrement: () => void, 
+  count: number
 }
 
-export default HomePage; 
+
+export default class HomePage extends Component {
+  render = () => {
+    const {count, increment, decrement} = this.props as Props; 
+    return (
+      <div style={{textAlign: 'center', marginTop: '40px', fontSize: '2rem'}}>
+        <span>{count}</span>
+        <Button color={'lightgreen'} handleClick={increment}>Increment</Button>
+        <Button color={'orange'} handleClick={decrement}>Decrement</Button>
+      </div>
+    )
+  }
+}
